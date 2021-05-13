@@ -11,7 +11,7 @@ lim_b=4;
 num_inter=200;
 
 %paso de la funcion
-f = inline ("x.^2-1");
+f = inline ("x^2 - 1");
 %Calculo de ?i o h
 h= (lim_b-lim_a)/num_inter;
 % m+1 puntos, m intervalos
