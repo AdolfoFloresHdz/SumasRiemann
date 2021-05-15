@@ -8,7 +8,7 @@ clc
 
 a=1;
 b=4;
-%fun= (x.^2)+2;
+%fun= (x.^2)-1
 inter=200;
 
 %paso de la funcion
