@@ -3,7 +3,7 @@
 	% Autor:Adolfo Flores Hernandez 
 	% Fecha: 29/04/20
 clc 
-clc 
+ clc 
 %variables que sirven para saber los limites en donde se sacara el area
 
 a=1;
@@ -12,7 +12,7 @@ b=4;
 inter=200;
 
 %paso de la funcion
-f = inline ("x.^2+2");
+f = inline ("x^2 - 1");
 %Calculo de ?i o h
 h= (b-a)/inter;
 % m+1 puntos, m intervalos
