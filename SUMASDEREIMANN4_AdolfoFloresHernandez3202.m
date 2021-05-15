@@ -1,27 +1,30 @@
 %Titulo : Sumas de reimannn4
-% DescripciÛn: Script para representar la funcion 
+% Descripci√≥n: Script para representar la funcion 
 	% Autor:Adolfo Flores Hernandez 
 	% Fecha: 29/04/2021
-  % f (x) = x ^ 2 - 2x + 3 en [?2, 3] con 8, 16, 32 y 48 rect·ngulos respectivamente
+  % f (x) = x ^ 2 - 2x + 3 en [?2, 3] con 8, 16, 32 y 48 rect√°ngulos respectivamente
 clc
-   pkg load symbolic
-  clear
- syms x;
- f =  4*x+5;
-  a = input ('Inicio de intervalo');
-  b = input('Fin de intervalo ');
-  n = 3-0;
-  dx = (b-a)/n;
-  resultado = zeros(1,n);
-  k =1;
-  fs=subs(f,x,(a+k*dx));
-  fr = fs * dx ;
-  resultado = fr;
-  for k=1:n
-    fs=subs(f,x,(a+1+dx));
-    fr=fs*dx;
-    resultado(i+1)=resultado(i)+fr
-   endfor 
-   fprintf('total es:',double(resultado));
-   x=a:0:b;
-  
+   clc 
+%variables que sirven para saber los limites en donde se sacara el area
+
+a=2;
+b=5;
+%fun= (x.^2)+2;
+inter=200;
+
+%paso de la funcion
+f = inline ("x*(4)+5 ");
+%Calculo de ?i o h
+h= (b-a)/inter;
+% m+1 puntos, m intervalos
+x= a:h:b;
+int=0;
+%para cada intervalo
+for i=1:inter;
+  %extremos x(i), x(i+1)
+  xm=(x(i)+x(i+1))/2;
+  int=int+f(xm)*h;
+   
+end 
+fprintf ("el area es: ")
+fprintf("%d", int);
